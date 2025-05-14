@@ -119,5 +119,7 @@ blob_konteineri_loomine(blob_container_name)
 
 # Peameetod, mis paneb käima Flask rakenduse
 if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 80))
+
     # Aktiveerime DEBUG moodi, et näha lisainfot programmi töö kohta väljundis.
-    app.run(debug=True)
+    app.run(host="0.0.0.0", debug=True, port=port)
